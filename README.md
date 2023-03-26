@@ -8,7 +8,7 @@
 
 A MySQL client for Node.js that makes defining tables easy and automatically migrates table schemas.
 
-This module extends the popular [`mysql`](https://www.npmjs.com/package/mysql) module, so it is recommended that you read the [`mysql` documentation](https://github.com/mysqljs/mysql#introduction), especially the sections on [connection options](https://github.com/mysqljs/mysql#connection-options), [performing queries](https://github.com/mysqljs/mysql#performing-queries), [escaping query values](https://github.com/mysqljs/mysql#escaping-query-values), and [escaping query identifiers](https://github.com/mysqljs/mysql#escaping-query-identifiers).
+This module extends the popular [`mysql2`](https://www.npmjs.com/package/mysql2) module, so it is recommended that you read the [`mysql` documentation](https://github.com/mysqljs/mysql#introduction), especially the sections on [connection options](https://github.com/mysqljs/mysql#connection-options), [performing queries](https://github.com/mysqljs/mysql#performing-queries), [escaping query values](https://github.com/mysqljs/mysql#escaping-query-values), and [escaping query identifiers](https://github.com/mysqljs/mysql#escaping-query-identifiers).
 
 ## Table of Contents
 
@@ -107,7 +107,7 @@ db.sync((err) => {
 ## Modules
 
 <dl>
-<dt><a href="#module_mysql-plus">mysql-plus</a> ⇐ <code>mysql</code></dt>
+<dt><a href="#module_mysql-plus">mysql-plus</a> ⇥ <code>mysql</code></dt>
 <dd><p>This module.</p>
 </dd>
 </dl>
@@ -115,7 +115,7 @@ db.sync((err) => {
 ## Classes
 
 <dl>
-<dt><a href="#PoolPlus">PoolPlus</a> ⇐ <code>Pool</code></dt>
+<dt><a href="#PoolPlus">PoolPlus</a> ⇥ <code>Pool</code></dt>
 <dd><p>A class that extends the <code>mysql</code> module&#39;s <code>Pool</code> class with the ability to define tables
 and perform queries and transactions using promises.</p>
 </dd>
@@ -141,13 +141,13 @@ an instance, use <a href="#PoolPlus+defineTable"><code>poolPlus.defineTable()</c
 
 <a name="module_mysql-plus"></a>
 
-## mysql-plus ⇐ <code>mysql</code>
+## mysql-plus ⇥ <code>mysql</code>
 This module.
 
 **Extends**: <code>mysql</code>
 **See**: [mysql](https://github.com/mysqljs/mysql#mysql)
 
-* [mysql-plus](#module_mysql-plus) ⇐ <code>mysql</code>
+* [mysql-plus](#module_mysql-plus) ⇥ <code>mysql</code>
     * [~ColTypes](#module_mysql-plus..ColTypes)
     * [~KeyTypes](#module_mysql-plus..KeyTypes)
     * [~createPool(config)](#module_mysql-plus..createPool) ⇒ <code>[PoolPlus](#PoolPlus)</code>
@@ -258,14 +258,14 @@ A function called with the results of a query.
 
 <a name="PoolPlus"></a>
 
-## PoolPlus ⇐ <code>Pool</code>
-A class that extends the `mysql` module's `Pool` class with the ability to define tables
+## PoolPlus ⇥ <code>Pool</code>
+A class that extends the `mysql2` module's `Pool` class with the ability to define tables
 and perform queries and transactions using promises.
 
 **Extends**: <code>Pool</code>
 **See**: [Pool](https://github.com/mysqljs/mysql#pooling-connections)
 
-* [PoolPlus](#PoolPlus) ⇐ <code>Pool</code>
+* [PoolPlus](#PoolPlus) ⇥ <code>Pool</code>
     * _instance_
         * [.ColTypes](#PoolPlus+ColTypes)
         * [.KeyTypes](#PoolPlus+KeyTypes)
@@ -591,7 +591,7 @@ function trxnHandler(trxn, done) {
 <a name="Connection"></a>
 
 ## Connection
-The `mysql` module's `Connection` class extended with one extra method. Returned by
+The `mysql2` module's `Connection` class extended with one extra method. Returned by
   [`mysql.createConnection()`](https://github.com/mysqljs/mysql#establishing-connections)
   and [`pool.getConnection()`](https://github.com/mysqljs/mysql#pooling-connections) and
   passed to [`transactionHandler`](#PoolPlus..transactionHandler).
